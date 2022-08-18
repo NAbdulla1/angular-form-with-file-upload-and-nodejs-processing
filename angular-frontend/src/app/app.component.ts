@@ -22,7 +22,7 @@ export class AppComponent implements OnInit {
   submitForm() {
     const formData = new FormData(this.fileForm.nativeElement);
 
-    this.http.post<Payload>('http://localhost:5000/', formData).subscribe({
+    this.http.post<Payload>(this.urlBase, formData).subscribe({
       next: (data: Payload) => {
         console.log('response: ', data);
         this.images$ = this.http.get<Payload[]>(this.urlBase);
