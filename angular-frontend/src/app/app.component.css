@@ -1,0 +1,21 @@
+.form div {
+    margin-bottom: 10px;
+}
+
+.images, .form {
+    padding: 10px;
+    border: 1px dotted black;
+    margin-bottom: 10px;
+}
+
+.images ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.images ul img {
+    margin-right: 10px;
+    padding: 5px;
+    border: 1px solid gray;
+}

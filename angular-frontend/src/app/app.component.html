@@ -1,25 +1,26 @@
-<h2>Form with File upload</h2>
-<form #fileForm (ngSubmit)="submitForm()" enctype="multipart/form-data">
-  <div>
-    <label>Name: </label>
-    <input name="name" type="text" placeholder="Enter name" required>
-  </div>
-  <div>
-    <label>Picture: </label>
-    <input name="picture" type="file" accept="image/*" required>
-  </div>
-  <div>
-    <button type="submit">Submit</button>
-  </div>
-</form>
-
-<h2>
-  Pictures
-</h2>
-<div *ngIf="images$ | async as images">
-  <ul style="list-style: none;" *ngFor="let image of images">
-    <li>
-      <img style="width: 100px;" src="{{urlBase}}/{{image.url}}" [alt]="image.name">
+<div class="form">
+  <h2>Form with File upload</h2>
+  <form #fileForm (ngSubmit)="submitForm()" enctype="multipart/form-data">
+    <div>
+      <label>Name: </label>
+      <input name="name" type="text" placeholder="Enter name" required>
+    </div>
+    <div>
+      <label>Picture: </label>
+      <input name="picture" type="file" accept="image/*" required>
+    </div>
+    <div>
+      <button type="submit">Submit</button>
+    </div>
+  </form>
+</div>
+<div class="images">
+  <h2>
+    Pictures
+  </h2>
+  <ul style="list-style: none;" *ngIf="images$ | async as images">
+    <li *ngFor="let image of images">
+      <img style="width: 300px;" src="{{urlBase}}/{{image.url}}" [alt]="image.name">
     </li>
   </ul>
 </div>
